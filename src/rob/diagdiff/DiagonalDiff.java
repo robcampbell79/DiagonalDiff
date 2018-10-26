@@ -20,7 +20,7 @@ public class DiagonalDiff {
 			for(int j = 0; j < width; j++) {
 				System.out.print("Enter array spot " + i + " " + j + ": ");
 				int spot = sc.nextInt();
-				array[i][j] = i + j + (spot * i);
+				array[i][j] = spot;
 			}
 		}
 		
