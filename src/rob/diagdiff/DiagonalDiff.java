@@ -25,10 +25,28 @@ public class DiagonalDiff {
 		}
 		
 		result(array);
+		System.out.println(findDiff(array));
 	}
 	
 	public static void result(int array[][]) {
 		System.out.println(Arrays.deepToString(array).replace("], ", "]\n").replace("[[", "[").replace("]]", "]"));
 		
+	}
+	
+	public static int findDiff(int array[][]) {
+		int sum = 0;
+		int mirrSum = 0;
+		int count = 0;
+		
+		for(int i = 0; i < array.length; i++) {
+			sum += array[i][i];
+		}
+		
+		for(int i = array.length - 1; i >= 0; i--) {
+			mirrSum += array[i][count];
+			count++;
+		}
+		
+		return Math.abs(sum - mirrSum);
 	}
 }
